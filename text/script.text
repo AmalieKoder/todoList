@@ -1,0 +1,55 @@
+// Henter fra HTML til JavaScript
+
+const todoForm = document.querySelector("#todo-form");
+const inputText = document.querySelector("#input-text");
+const taskList = document.querySelector("#task-list");
+
+// Setter opp ny oppgave til (taskList)
+
+function addTask() {
+    if (inputText.value) {
+        const newTask = document.createElement("li");
+        const deletButton = document.createElement("button");
+
+        deletButton.textContent = "🗑️";
+        newTask.textContent = inputText.value;
+
+        taskList.appendChild(newTask);
+        newTask.appendChild(deletButton);
+
+    
+    } else {
+      alert("Pleas enter a task");
+    }
+    saveData()
+} 
+
+// Tar vekk en oppgave fra (taskList) når den hører et click
+
+taskList.addEventListener("click", function(event) {
+    event.target.tagName === "BUTTON" && event.target.parentElement.remove();
+    saveData()
+});
+
+// Forhindre standard oppførsel for skjemainnsending og kaller (addTask)
+// Standard oppførsel oppdaterer siden, det skal vi ikke ha
+// Det vil føre en bugs
+
+todoForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+});
+
+// Lagrers data til (localStorage)
+
+function saveData() {
+    localStorage.setItem("taskList", taskList.innerHTML);
+}
+
+// Utløses av funksjonen legg til data
+
+// Loader data fra (localStorage)
+
+function loadData() {
+    taskList.innerHTML = localStorage.getItem("taskList");
+}
+loadData()

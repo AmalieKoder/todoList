@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+   <header>
+     <h1>Todo List</h1>
+   </header> 
+   <main>
+    <section class="section">
+        <div class="list-wrapper">
+            <img class="paw" src="/gif/paw.gif" alt="paw">
+            <form class="center" id="todo-form">
+                <input type="text" id="input-text">
+            </form>
+            <button class="button" onclick="addTask()">Add</button>
+            <ul class="ul" id="task-list"></ul>
+        </div>
+    </section>
+   </main>
+</body>
+</html>
