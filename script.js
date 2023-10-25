@@ -151,6 +151,18 @@ clearAll.addEventListener("click", () => {
     showTodo();
 });
 
+// Attach a "keyup" event listener to the element with the id "taskInput"
+// Get the value entered by the user and remove any leading or trailing whitespace
+// Check if the key that triggered the event is the "Enter" key and if the user has entered a task
+// Check if it's not an edit task (isEditTask is presumably a boolean variable)
+// Initialize the "todos" array if it's not already defined
+ // Create an object containing the task name and status
+ // Add the taskInfo object to the "todos" array
+ // If it is an edit task, reset the isEditTask flag and update the task name in the "todos" array
+  // Clear the input field after processing
+  // Store the "todos" array in local storage after making changes
+  // Call the "showTodo" function with the ID of the currently active span element
+  
 taskInput.addEventListener("keyup", (e) => {
     let userTask = taskInput.value.trim();
     if (e.key == "Enter" && userTask) {
