@@ -12,6 +12,10 @@ body {
     background: linear-gradient(135deg, #b5179e, #4895ef);
 }
 
+.gitHub {
+    color: black;
+}
+
 ::selection {
     color: #fff;
     background: #4895ef;
